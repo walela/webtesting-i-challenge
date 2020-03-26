@@ -1,5 +1,6 @@
 const enhancer = require('./enhancer.js')
 
+// TODO - add equality tests?
 describe('enhancer methods', () => {
   describe('repair method', () => {
     test('returns a correctly repaired item', () => {
