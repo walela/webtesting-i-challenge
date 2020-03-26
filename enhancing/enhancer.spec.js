@@ -2,7 +2,7 @@ const enhancer = require('./enhancer.js')
 
 describe('enhancer methods', () => {
   describe('repair method', () => {
-    // how to check if item is a copy and not a reference?
+    // check for referential identity 
     test('returns a copy of the item', () => {
       const item = { name: 'Luigi', durability: 100, enhancement: 20 }
       expect(enhancer.repair(item)).not.toBe(item)

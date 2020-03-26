@@ -31,7 +31,14 @@ const repair = item => {
 }
 
 function get(item) {
-  return { ...item }
+  const { enhancement, name } = item
+
+  if (enhancement === 0) {
+    return { ...item }
+  } else if (enhancement > 0) {
+    const updatedName = `[+${enhancement}] ${name}`
+    return { ...item, name: updatedName }
+  }
 }
 
 module.exports = {
