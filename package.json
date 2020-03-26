@@ -1,0 +1,25 @@
+{
+  "name": "webtesting-i-challenge",
+  "version": "1.0.0",
+  "description": "intro to unit testing challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/walela/webtesting-i-challenge.git"
+  },
+  "keywords": [],
+  "author": "Austin Walela<austinwalela@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/walela/webtesting-i-challenge/issues"
+  },
+  "homepage": "https://github.com/walela/webtesting-i-challenge#readme",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-plugin-jest": "^23.8.2",
+    "jest": "^25.2.0"
+  }
+}
