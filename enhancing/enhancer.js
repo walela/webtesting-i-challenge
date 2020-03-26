@@ -1,6 +1,6 @@
 const succeed = item => {
   if (item.enhancement === 20) {
-    return item
+    return { ...item }
   } else {
     const { enhancement } = item
     const updatedEnhancement = enhancement + 1
