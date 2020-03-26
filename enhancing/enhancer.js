@@ -1,5 +1,11 @@
-function succeed(item) {
-  return { ...item }
+const succeed = item => {
+  if (item.enhancement === 20) {
+    return item
+  } else {
+    const { enhancement } = item
+    const updatedEnhancement = enhancement + 1
+    return { ...item, enhancement: updatedEnhancement }
+  }
 }
 
 function fail(item) {
