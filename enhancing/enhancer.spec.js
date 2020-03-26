@@ -2,7 +2,7 @@ const enhancer = require('./enhancer.js')
 
 describe('enhancer methods', () => {
   describe('repair method', () => {
-    // check for referential identity 
+    // check for referential identity
     test('returns a copy of the item', () => {
       const item = { name: 'Luigi', durability: 100, enhancement: 20 }
       expect(enhancer.repair(item)).not.toBe(item)
@@ -67,6 +67,25 @@ describe('enhancer methods', () => {
             enhancement: 19
           })
         })
+      })
+    })
+  })
+
+  describe('get method', () => {
+    test('returns a copy of the item', () => {
+      const item = { name: 'Luigi', durability: 100, enhancement: 0 }
+      expect(enhancer.get(item)).not.toBe(item)
+    })
+    test('returns unchanged item given enchancement of 0', () => {
+      const item = { name: 'Kitana', durability: 77, enhancement: 0 }
+      expect(enhancer.get(item)).toEqual(item)
+    })
+    test('returns correctly modified object given enhacement of more than 0', () => {
+      const item = { name: 'Iron Sword', durability: 88, enhancement: 7 }
+      expect(enhancer.get(item)).toEqual({
+        name: '[+7] Iron Sword',
+        durability: 88,
+        enhancement: 7
       })
     })
   })
