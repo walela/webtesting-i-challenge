@@ -1,8 +1,12 @@
 const enhancer = require('./enhancer.js')
 
-// TODO - add equality tests?
 describe('enhancer methods', () => {
   describe('repair method', () => {
+    // how to check if item is a copy and not a reference?
+    test('returns a copy of the item', () => {
+      const item = { name: 'Luigi', durability: 100, enhancement: 20 }
+      expect(enhancer.repair(item)).not.toBe(item)
+    })
     test('returns a correctly repaired item', () => {
       const expectedOuput = {
         name: 'Lara Croft',
@@ -15,6 +19,11 @@ describe('enhancer methods', () => {
     })
   })
   describe('successful enhancement method', () => {
+    test('returns a copy of the item', () => {
+      const item = { name: 'Luigi', durability: 100, enhancement: 20 }
+      expect(enhancer.succeed(item)).not.toBe(item)
+    })
+
     test('returns an unchanged object given max enhancement', () => {
       const item = { name: 'Mario', durability: 55, enhancement: 20 }
       expect(enhancer.succeed(item)).toEqual(item)
